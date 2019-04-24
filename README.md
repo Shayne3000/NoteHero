@@ -1,5 +1,5 @@
 # NoteHero
-A complete, release-ready app for storing notes loosely based on the OnePlus stock Notes and Google Keep app design. It's the source code for this blog post (tentative link here) which demonstrates a simplistic, easy-to-understand approach on how to build a professional, release-ready android app from the ground up using modern Android App development techniques.
+A complete, release-ready app for storing notes loosely based on the OnePlus stock Notes app and Google Keep. It's the source code for this blog post (tentative link here) which demonstrates a simplistic, easy-to-understand approach on how to build a professional, release-ready android app from the ground up using modern Android App development techniques.
 
 ## Features
 
