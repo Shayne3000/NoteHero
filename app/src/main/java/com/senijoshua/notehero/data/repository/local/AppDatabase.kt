@@ -1,0 +1,20 @@
+package com.senijoshua.notehero.data.repository.local
+
+import androidx.room.Database
+import androidx.room.RoomDatabase
+import com.senijoshua.notehero.data.models.local.Note
+
+/**
+ * This represents the app's Database with its inherent components and configuration.
+ * @author Seni Joshua
+ */
+@Database(entities = [Note::class], version = 1, exportSchema = false)
+abstract class AppDatabase : RoomDatabase() {
+    // TODO Remember to implement a migration to newer DB versions and removed the exportSchema
+
+    abstract fun getNoteDao(): NoteDao
+
+    companion object {
+        const val DATABASE_NAME = "notehero_db.db"
+    }
+}

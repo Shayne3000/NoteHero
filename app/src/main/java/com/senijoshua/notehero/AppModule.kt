@@ -2,8 +2,13 @@ package com.senijoshua.notehero
 
 import android.app.Application
 import android.content.Context
+import androidx.room.Room
+import com.senijoshua.notehero.data.repository.local.AppDatabase
+import com.senijoshua.notehero.data.repository.local.AppDatabase.Companion.DATABASE_NAME
+import com.senijoshua.notehero.data.repository.local.NoteDao
 import dagger.Binds
 import dagger.Module
+import dagger.Provides
 
 /**
  * Application Module responsible for instantiating and supplying application scope dependencies
@@ -16,5 +21,16 @@ abstract class AppModule {
     @Binds
     abstract fun provideContext(application: Application): Context
 
-    //TODO supply retrofit, okhttp, room, shared pref by using includes of those modules i.e. RetrofitModule
+    @Provides
+    @AppScope
+    fun provideAppDatabase(context: Context): AppDatabase {
+        return Room.databaseBuilder(context, AppDatabase::class.java, DATABASE_NAME).build()
+    }
+
+    @Provides
+    @AppScope
+    fun provideNoteDao(database: AppDatabase): NoteDao {
+        return database.getNoteDao()
+    }
+    // TODO supply retrofit, okhttp, room, shared pref by using includes of those modules i.e. RetrofitModule
 }

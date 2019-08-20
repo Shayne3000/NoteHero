@@ -10,6 +10,7 @@ import dagger.android.AndroidInjectionModule
  *
  * @author Seni Joshua
  */
+@AppScope
 @Component(modules = [
     AndroidInjectionModule::class,
     AppModule::class,
@@ -20,11 +21,11 @@ interface AppComponent {
     @Component.Builder
     interface Builder {
         @BindsInstance
-        fun application(application: Application) : Builder
-        fun build() : AppComponent
+        fun application(application: Application): Builder
+        fun build(): AppComponent
     }
 
     fun inject(app: AppConfig)
-    //Todo remember to create subcomponents for dependencies with non-global scopes within Activities/Fragments
-    //Todo Make sure the sole activity implements HasSupportFragmentInjector for injection into fragments.
+    // Todo remember to create subcomponents for dependencies with non-global scopes within Activities/Fragments
+    // Todo Make sure the sole activity implements HasSupportFragmentInjector for injection into fragments.
 }
