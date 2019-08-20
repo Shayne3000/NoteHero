@@ -2,8 +2,9 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
-apply plugin: "kotlin-allopen"
-apply plugin: "org.jmailen.kotlinter"
+apply plugin: 'kotlin-allopen'
+
+apply from: '../ktlint.gradle'
 
 android {
     compileSdkVersion 28
@@ -54,6 +55,8 @@ dependencies {
     //Android testing framework
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
+    //Room Test Helper
+    testImplementation 'androidx.room:room-testing:2.1.0'
     //Espresso
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }

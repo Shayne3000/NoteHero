@@ -8,5 +8,4 @@ import dagger.Module
  * @author Seni Joshua
  */
 @Module
-abstract class AndroidInjectionLocationsModule {
-}
+abstract class AndroidInjectionLocationsModule

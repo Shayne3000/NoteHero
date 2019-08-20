@@ -41,7 +41,7 @@ class AppConfig : Application(), HasActivityInjector {
 
         var appComponent: AppComponent? = null
 
-        fun getAppContext() : Context {
+        fun getAppContext(): Context {
             return appInstance!!.applicationContext
         }
     }
