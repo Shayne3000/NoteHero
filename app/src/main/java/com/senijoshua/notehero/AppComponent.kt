@@ -27,5 +27,4 @@ interface AppComponent {
 
     fun inject(app: AppConfig)
     // Todo remember to create subcomponents for dependencies with non-global scopes within Activities/Fragments
-    // Todo Make sure the sole activity implements HasSupportFragmentInjector for injection into fragments.
 }
