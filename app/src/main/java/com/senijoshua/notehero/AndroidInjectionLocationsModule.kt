@@ -1,6 +1,8 @@
 package com.senijoshua.notehero
 
+import com.senijoshua.notehero.presentation.RootActivity
 import dagger.Module
+import dagger.android.ContributesAndroidInjector
 
 /**
  * This lists the Android classes in which dependencies will be injected
@@ -8,4 +10,8 @@ import dagger.Module
  * @author Seni Joshua
  */
 @Module
-abstract class AndroidInjectionLocationsModule
+abstract class AndroidInjectionLocationsModule {
+
+    @ContributesAndroidInjector
+    abstract fun provideRootActivity(): RootActivity
+}

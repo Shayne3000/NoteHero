@@ -1,11 +1,10 @@
 package com.senijoshua.notehero
 
-import android.app.Activity
 import android.app.Application
 import android.content.Context
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
-import dagger.android.HasActivityInjector
+import dagger.android.HasAndroidInjector
 import javax.inject.Inject
 
 /**
@@ -13,9 +12,8 @@ import javax.inject.Inject
  *
  * @author Seni Joshua
  */
-class AppConfig : Application(), HasActivityInjector {
-
-    @Inject lateinit var activityInjector: DispatchingAndroidInjector<Activity>
+class AppConfig : Application(), HasAndroidInjector {
+    @Inject lateinit var androidInjector: DispatchingAndroidInjector<Any>
 
     override fun onCreate() {
         super.onCreate()
@@ -29,12 +27,12 @@ class AppConfig : Application(), HasActivityInjector {
     }
 
     /**
-     * Since we'd be using Dagger to inject dependencies into Android classes,
-     * we'll need to specify that the app has an activity injector. This activity injector
-     * is from Dagger and will be injected by the AppComponent. It is what gets returned as the
-     * injector for injecting dependencies into Android classes when activity injector is overridden.
+     * In order to inject dependencies into Android classes, Dagger's AndroidInjector API can be used as it is used to
+     * perform field injection for Activities, Fragments, BroadcastReceiver, and Services. It is injected here by the
+     * AppComponent and is what gets returned as the injector for performing injection for the component Activity
+     * when the androidinjector method is overridden.
      */
-    override fun activityInjector(): AndroidInjector<Activity> = activityInjector
+    override fun androidInjector(): AndroidInjector<Any> = androidInjector
 
     companion object {
         var appInstance: Application? = null

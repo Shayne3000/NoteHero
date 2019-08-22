@@ -1,5 +1,6 @@
 package com.senijoshua.notehero.data.repository.local
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -23,10 +24,10 @@ interface NoteDao {
     fun updateNote(note: Note)
 
     @Query("SELECT * FROM notes WHERE notes.id = :id")
-    fun getNoteById(id: Long)
+    fun getNoteById(id: Long): LiveData<Note>
 
     @Query("SELECT * FROM notes")
-    fun getAllNotes(): List<Note>
+    fun loadAllNotes(): LiveData<List<Note>>
 
     @Delete
     fun deleteNote(note: Note)
