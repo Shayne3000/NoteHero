@@ -3,9 +3,10 @@ package com.senijoshua.notehero
 import android.app.Application
 import android.content.Context
 import androidx.room.Room
-import com.senijoshua.notehero.data.repository.local.AppDatabase
-import com.senijoshua.notehero.data.repository.local.AppDatabase.Companion.DATABASE_NAME
-import com.senijoshua.notehero.data.repository.local.NoteDao
+import com.senijoshua.notehero.data.sources.local.AppDatabase
+import com.senijoshua.notehero.data.sources.local.AppDatabase.Companion.DATABASE_NAME
+import com.senijoshua.notehero.data.sources.local.dao.NoteDao
+import com.senijoshua.notehero.utils.annotations.AppScope
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

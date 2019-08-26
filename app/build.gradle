@@ -6,6 +6,11 @@ apply plugin: 'kotlin-allopen'
 
 apply from: '../ktlint.gradle'
 
+allOpen {
+    // allows a final class to be extensible
+    annotation('com.senijoshua.notehero.utils.annotations.OpenForTesting')
+}
+
 android {
     compileSdkVersion 28
     defaultConfig {

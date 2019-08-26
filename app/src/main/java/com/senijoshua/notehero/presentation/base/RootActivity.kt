@@ -1,4 +1,4 @@
-package com.senijoshua.notehero.presentation
+package com.senijoshua.notehero.presentation.base
 
 import android.os.Bundle
 import android.view.Menu
