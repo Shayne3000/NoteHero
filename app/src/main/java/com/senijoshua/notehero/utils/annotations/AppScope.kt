@@ -4,6 +4,7 @@ import javax.inject.Scope
 
 /**
  * Dagger annotation that denotes application scope
+ * @author Seni Joshua
  */
 @Scope
 @Retention(AnnotationRetention.RUNTIME)
