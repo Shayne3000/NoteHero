@@ -6,13 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.senijoshua.notehero.presentation.base.NoteHeroFragment
+import dagger.android.support.AndroidSupportInjection
+import javax.inject.Inject
 
 class NotesHomeFragment : NoteHeroFragment() {
-//instantiate and supply a ViewModelFactory (which would create a ViewModel) in the AppModule
-    //and create it here using a ViewModelProvider. This may also allow injection in this ViewModel.
+    @Inject lateinit var viewModel: NotesHomeViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        //field injection can be done here with the AndroidInjector
+        AndroidSupportInjection.inject(this)
         super.onCreate(savedInstanceState)
     }
 
