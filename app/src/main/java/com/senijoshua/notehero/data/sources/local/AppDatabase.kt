@@ -1,8 +1,9 @@
-package com.senijoshua.notehero.data.repository.local
+package com.senijoshua.notehero.data.sources.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.senijoshua.notehero.data.models.local.Note
+import com.senijoshua.notehero.data.sources.local.entity.Note
+import com.senijoshua.notehero.data.sources.local.dao.NoteDao
 
 /**
  * This represents the app's Database with its inherent components and configuration.

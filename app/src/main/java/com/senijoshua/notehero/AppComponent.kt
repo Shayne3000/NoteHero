@@ -1,6 +1,7 @@
 package com.senijoshua.notehero
 
 import android.app.Application
+import com.senijoshua.notehero.utils.annotations.AppScope
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule

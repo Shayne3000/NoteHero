@@ -1,4 +1,4 @@
-package com.senijoshua.notehero.data.models.local
+package com.senijoshua.notehero.data.sources.local.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

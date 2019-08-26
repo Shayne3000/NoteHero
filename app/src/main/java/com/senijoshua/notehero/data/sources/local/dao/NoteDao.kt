@@ -1,4 +1,4 @@
-package com.senijoshua.notehero.data.repository.local
+package com.senijoshua.notehero.data.sources.local.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
@@ -7,7 +7,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
-import com.senijoshua.notehero.data.models.local.Note
+import com.senijoshua.notehero.data.sources.local.entity.Note
 
 /**
  * The class is responsible for retrieving entities from the DB
