@@ -1,4 +1,4 @@
-package com.senijoshua.notehero
+package com.senijoshua.notehero.dagger.modules
 
 import android.app.Application
 import android.content.Context
@@ -16,11 +16,11 @@ import dagger.Provides
  *
  * @author Seni Joshua
  */
-@Module
+@Module(includes = [ViewModelModule::class])
 abstract class AppModule {
 
     @Binds
-    abstract fun provideContext(application: Application): Context
+    abstract fun bindContext(application: Application): Context
 
     @Provides
     @AppScope

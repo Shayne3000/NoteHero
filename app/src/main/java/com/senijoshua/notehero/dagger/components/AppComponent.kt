@@ -1,6 +1,9 @@
-package com.senijoshua.notehero
+package com.senijoshua.notehero.dagger.components
 
 import android.app.Application
+import com.senijoshua.notehero.AppConfig
+import com.senijoshua.notehero.dagger.modules.ActivityBuildersModule
+import com.senijoshua.notehero.dagger.modules.AppModule
 import com.senijoshua.notehero.utils.annotations.AppScope
 import dagger.BindsInstance
 import dagger.Component
@@ -15,7 +18,7 @@ import dagger.android.AndroidInjectionModule
 @Component(modules = [
     AndroidInjectionModule::class,
     AppModule::class,
-    AndroidInjectionLocationsModule::class
+    ActivityBuildersModule::class
 ])
 interface AppComponent {
 

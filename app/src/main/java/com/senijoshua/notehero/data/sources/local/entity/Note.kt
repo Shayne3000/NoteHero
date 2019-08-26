@@ -2,6 +2,8 @@ package com.senijoshua.notehero.data.sources.local.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import androidx.room.TypeConverters
+import com.senijoshua.notehero.data.sources.local.DateConverter
 import java.util.Date
 
 /**
@@ -10,6 +12,7 @@ import java.util.Date
  * @author Seni Joshua
  */
 @Entity(tableName = "notes")
+@TypeConverters(DateConverter::class)
 data class Note(
     @PrimaryKey val id: Int,
     val lastModified: Date,
