@@ -8,6 +8,4 @@ import com.senijoshua.notehero.utils.annotations.OpenForTesting
  * such as the Toolbar setup.
  */
 @OpenForTesting
-class NoteHeroFragment : Fragment() {
-
-}
+class NoteHeroFragment(layoutId: Int) : Fragment(layoutId)

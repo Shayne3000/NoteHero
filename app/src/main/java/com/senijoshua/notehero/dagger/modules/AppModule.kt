@@ -7,7 +7,6 @@ import com.senijoshua.notehero.data.sources.local.AppDatabase
 import com.senijoshua.notehero.data.sources.local.AppDatabase.Companion.DATABASE_NAME
 import com.senijoshua.notehero.data.sources.local.dao.NoteDao
 import com.senijoshua.notehero.utils.annotations.AppScope
-import dagger.Binds
 import dagger.Module
 import dagger.Provides
 
@@ -17,10 +16,13 @@ import dagger.Provides
  * @author Seni Joshua
  */
 @Module(includes = [ViewModelModule::class])
-abstract class AppModule {
+class AppModule {
 
-    @Binds
-    abstract fun bindContext(application: Application): Context
+    @Provides
+    @AppScope
+    fun provideContext(application: Application): Context {
+        return application.applicationContext
+    }
 
     @Provides
     @AppScope

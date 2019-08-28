@@ -15,5 +15,4 @@ class DateConverter {
 
     @TypeConverter
     fun toTimeStamp(date: Date): Long = date.time
-
 }

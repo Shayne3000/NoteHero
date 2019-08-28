@@ -15,7 +15,7 @@ import javax.inject.Provider
 class CustomViewModelFactory @Inject constructor(
     private val providers: Map<Class<out ViewModel>,
         @JvmSuppressWildcards Provider<ViewModel>>
-                                                ) : ViewModelProvider.Factory {
+) : ViewModelProvider.Factory {
 
     /*
       In order to inject ViewModel instances into activities, fragments, with Dagger we need to instantiate and supply a
