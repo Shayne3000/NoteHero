@@ -8,10 +8,10 @@ import dagger.Module
 import dagger.Provides
 
 /**
- * This class abstracts the provisioning of the NotesHomeViewModel
- * instance for injection in the NotesHomeFragment. This way the
- * Fragment has no details of how its View Model instance is created and supplied
- * for injection.
+ * This class abstracts the creation of the NotesHomeViewModel instance
+ * through the provider since we've opted to inject the instance in the NotesHomeFragment
+ * directly rather than create it in the class as usual. This way, the Fragment has no
+ * idea how its View Model instance is instantiated and supplied for injection.
  * @author Seni Joshua
  */
 @Module
@@ -21,5 +21,5 @@ class NotesHomeViewModelInjectionModule {
     fun provideNotesHomeViewModel(
         target: NotesHomeFragment,
         factory: ViewModelProvider.Factory
-                                 ) = ViewModelProviders.of(target, factory).get(NotesHomeViewModel::class.java)
+    ) = ViewModelProviders.of(target, factory).get(NotesHomeViewModel::class.java)
 }

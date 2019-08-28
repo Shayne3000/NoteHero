@@ -1,6 +1,6 @@
 package com.senijoshua.notehero.dagger.modules
 
-import com.senijoshua.notehero.presentation.base.RootActivity
+import com.senijoshua.notehero.presentation.base.NoteHeroActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -12,9 +12,9 @@ import dagger.android.ContributesAndroidInjector
 abstract class ActivityBuildersModule {
 
     /**
-     * Denotes the [RootActivity] as a location in which an AndroidInjector will be generated
+     * Denotes the [NoteHeroActivity] as a location in which an AndroidInjector will be generated
      * with a subcomponent to perform field injection
      */
     @ContributesAndroidInjector
-    abstract fun contributeRootActivity(): RootActivity
+    abstract fun contributeRootActivity(): NoteHeroActivity
 }
