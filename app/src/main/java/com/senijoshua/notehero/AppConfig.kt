@@ -29,8 +29,8 @@ class AppConfig : Application(), HasAndroidInjector {
     }
 
     /**
-     * In order to inject dependencies into Android classes, Dagger's AndroidInjector API can be used as it is used to
-     * perform field injection for Activities, Fragments, BroadcastReceiver, and Services. It is injected here by the
+     * In order to inject dependencies into Android classes, Dagger's AndroidInjector API can be used as it
+     * performs field injection for Activities, Fragments, BroadcastReceiver, and Services. It is injected here by the
      * AppComponent and is what gets returned as the injector for performing injection for the component Activity
      * when the androidinjector method is overridden.
      */
