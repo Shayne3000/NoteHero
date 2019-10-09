@@ -9,7 +9,7 @@ import androidx.room.Update
 import com.senijoshua.notehero.data.sources.local.entity.Note
 
 /**
- * The class is responsible for retrieving entities from the DB
+ * The interface is responsible for retrieving entities from the DB
  * and persisting changes to said entities back into the DB.
  * @author Seni Joshua
  */
