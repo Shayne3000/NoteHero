@@ -17,20 +17,20 @@ import com.senijoshua.notehero.data.sources.local.entity.Note
 interface NoteDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insertNote(note: Note)
+    suspend fun insertNote(note: Note)
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
-    fun updateNote(note: Note)
+    suspend fun updateNote(note: Note)
 
     @Query("SELECT * FROM notes WHERE notes.id = :id")
-    fun getNote(id: Long): LiveData<Note>
+    suspend fun getNote(id: Long): LiveData<Note>
 
     @Query("SELECT * FROM notes")
-    fun loadAllNotes(): LiveData<List<Note>>
+    suspend fun loadAllNotes(): LiveData<List<Note>>
 
     @Query("DELETE FROM notes WHERE id = :id")
-    fun deleteNote(id: Long)
+    suspend fun deleteNote(id: Long)
 
     @Query("DELETE FROM notes")
-    fun deleteAllNotes()
+    suspend fun deleteAllNotes()
 }

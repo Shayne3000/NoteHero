@@ -15,27 +15,27 @@ import javax.inject.Inject
 @AppScope
 class NotesRepository @Inject constructor(private val noteDao: NoteDao) {
 
-    fun saveNote(note: Note) {
+    suspend fun saveNote(note: Note) {
         return noteDao.insertNote(note)
     }
 
-    fun updateNote(note: Note) {
+    suspend fun updateNote(note: Note) {
         return noteDao.updateNote(note)
     }
 
-    fun getAllNotes(): LiveData<List<Note>> {
+    suspend fun getAllNotes(): LiveData<List<Note>> {
         return noteDao.loadAllNotes()
     }
 
-    fun getNote(id: Long): LiveData<Note> {
+    suspend fun getNote(id: Long): LiveData<Note> {
         return noteDao.getNote(id)
     }
 
-    fun deleteNote(id: Long) {
+    suspend fun deleteNote(id: Long) {
         return noteDao.deleteNote(id)
     }
 
-    fun deleteAllNotes() {
+    suspend fun deleteAllNotes() {
         return noteDao.deleteAllNotes()
     }
 }
