@@ -10,6 +10,9 @@ import com.senijoshua.notehero.data.sources.local.dao.NoteDao
 import com.senijoshua.notehero.utils.annotations.AppScope
 import dagger.Module
 import dagger.Provides
+import okhttp3.Interceptor
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 
 /**
  * Application Module responsible for instantiating and supplying application scope dependencies
@@ -19,23 +22,39 @@ import dagger.Provides
 @Module(includes = [ViewModelModule::class])
 class AppModule {
 
-    @Provides
     @AppScope
+    @Provides
     fun provideContext(application: Application): Context {
         return application.applicationContext
     }
 
-    @Provides
     @AppScope
+    @Provides
     fun provideAppDatabase(context: Context): AppDatabase {
         return Room.databaseBuilder(context, AppDatabase::class.java, DATABASE_NAME)
             .addMigrations(MIGRATION_1_2).build()
     }
 
-    @Provides
     @AppScope
+    @Provides
     fun provideNoteDao(database: AppDatabase): NoteDao {
         return database.getNoteDao()
+    }
+
+    @AppScope
+    @Provides
+    fun provideOkHttp(networkLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
+        return OkHttpClient.Builder()
+            .addInterceptor(networkLoggingInterceptor)
+            .build()
+    }
+
+    @AppScope
+    @Provides
+    fun provideOkHttpLoggingInterceptor(): Interceptor {
+        return HttpLoggingInterceptor().apply {
+            level = HttpLoggingInterceptor.Level.BODY
+        }
     }
     // TODO supply retrofit, okhttp, room, shared pref by using includes of those modules i.e. RetrofitModule
 }
