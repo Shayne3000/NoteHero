@@ -18,7 +18,7 @@ class NotesHomeFragment : NoteHeroFragment(R.layout.fragment_notes_home) {
         AndroidSupportInjection.inject(this)
         super.onCreate(savedInstanceState)
 
-        viewModel.getNotes().observe(this, notesListObserver)
+        viewModel.activeNotes.observe(this, notesListObserver)
     }
 
     val notesListObserver = Observer<List<Note>> {
