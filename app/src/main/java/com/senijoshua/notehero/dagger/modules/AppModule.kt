@@ -19,7 +19,7 @@ import okhttp3.logging.HttpLoggingInterceptor
  *
  * @author Seni Joshua
  */
-@Module(includes = [ViewModelModule::class])
+@Module(includes = [ViewModelModule::class, NetworkModule::class])
 class AppModule {
 
     @AppScope
