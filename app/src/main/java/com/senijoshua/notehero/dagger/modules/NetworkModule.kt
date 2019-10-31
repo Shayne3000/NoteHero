@@ -29,7 +29,7 @@ class NetworkModule {
     fun provideRetrofit(httpClient: OkHttpClient, converterFactory: MoshiConverterFactory) =
         Retrofit.Builder().apply {
             client(httpClient)
-            //TODO Add base url for subslash
+            baseUrl("https://api.unsplash.com")
             addConverterFactory(converterFactory)
         }.build()
 }

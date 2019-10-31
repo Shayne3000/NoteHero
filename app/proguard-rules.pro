@@ -12,6 +12,9 @@
 #   public *;
 #}
 
+# This is to obfuscate everything in this package
+-keep class !com.senijoshua.** { *; }
+
 # Uncomment this to preserve the line number information for
 # debugging stack traces.
 -keepattributes SourceFile,LineNumberTable
