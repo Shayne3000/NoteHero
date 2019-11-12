@@ -13,6 +13,6 @@ interface NotesThumbRemote {
     @GET("/photos")
     fun getThumbPhotos(@Query("page") pageNumber: Int = 1,
                        @Query("per_page") itemsPerPage: Int = 20,
-                       @Query("order_by") order: String = "popular")v
+                       @Query("order_by") order: String = "popular")
 }
 
