@@ -1,5 +1,6 @@
 package com.senijoshua.notehero.data.sources.local.entity
 
+import android.graphics.Bitmap
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
@@ -18,6 +19,8 @@ data class Note(
     val lastModified: Date,
     val reminder: String?,
     val backgroundColor: Int,
+    val noteThumbNail: String,
+    val pictureAttachment: Bitmap?, // TODO as per schemas, create an Attachments table.
     val isReminder: Boolean,
     val isPinned: Boolean,
     val isTrashed: Boolean,
