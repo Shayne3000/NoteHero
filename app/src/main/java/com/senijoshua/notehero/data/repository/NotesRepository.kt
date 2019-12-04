@@ -3,17 +3,22 @@ package com.senijoshua.notehero.data.repository
 import androidx.lifecycle.LiveData
 import com.senijoshua.notehero.data.sources.local.dao.NoteDao
 import com.senijoshua.notehero.data.sources.local.entity.Note
+import com.senijoshua.notehero.data.sources.remote.ThumbRemoteDataSource
 import com.senijoshua.notehero.utils.annotations.AppScope
 import javax.inject.Inject
 
 /**
- * This handles the provisioning of data from remote and local data sources.
+ * This handles the provisioning of data from remote and local data sources to any given ViewModel.
  * In this case, it provisions a Note instance from the local DB which is
  * our single source of truth.
+ *
  * @author Seni Joshua
  */
 @AppScope
-class NotesRepository @Inject constructor(private val noteDao: NoteDao) {
+class NotesRepository @Inject constructor(
+    private val noteDao: NoteDao,
+    private val thumbRemoteSource: ThumbRemoteDataSource
+) {
 
     suspend fun saveNote(note: Note) {
         return noteDao.insertNote(note)
@@ -37,5 +42,8 @@ class NotesRepository @Inject constructor(private val noteDao: NoteDao) {
 
     suspend fun deleteAllNotes() {
         return noteDao.deleteAllNotes()
+    }
+
+    suspend fun getNoteThumbs() {
     }
 }

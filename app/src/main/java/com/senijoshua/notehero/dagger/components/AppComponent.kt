@@ -16,17 +16,20 @@ import dagger.android.AndroidInjectionModule
  * @author Seni Joshua
  */
 @AppScope
-@Component(modules = [
-    AndroidInjectionModule::class,
-    AppModule::class,
-    ActivityBuildersModule::class
-])
+@Component(
+    modules = [
+        AndroidInjectionModule::class,
+        AppModule::class,
+        ActivityBuildersModule::class
+    ]
+)
 interface AppComponent {
 
     @Component.Builder
     interface Builder {
         @BindsInstance
         fun application(application: Application): Builder
+
         fun build(): AppComponent
     }
 

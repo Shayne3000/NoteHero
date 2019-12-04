@@ -1,7 +1,7 @@
 package com.senijoshua.notehero.dagger.modules
 
 import android.util.Base64
-import com.senijoshua.notehero.data.sources.remote.ThumbRemote
+import com.senijoshua.notehero.data.sources.remote.ThumbApi
 import com.senijoshua.notehero.utils.annotations.AppScope
 import dagger.Module
 import dagger.Provides
@@ -49,7 +49,7 @@ class NetworkModule {
 
     @AppScope // todo Use AppScope for now till we perhaps create a different Subcomponent for notes
     @Provides
-    fun provideNotesThumbRemote(retrofit: Retrofit) = retrofit.create(ThumbRemote::class.java)
+    fun provideNotesThumbRemote(retrofit: Retrofit) = retrofit.create(ThumbApi::class.java)
 
     private val authInterceptor = object : Interceptor {
         override fun intercept(chain: Interceptor.Chain): Response {
@@ -57,10 +57,11 @@ class NetworkModule {
             return chain.proceed(
                 requestChain.newBuilder()
                     .addHeader(
-                        "Authorization","Client-ID ${decodeAccessKey(ACCESS_KEY)}"
-                              )
+                        "Authorization", "Client-ID ${decodeAccessKey(ACCESS_KEY)}"
+                    )
                     .addHeader("Accept-Version", "v1")
-                    .build())
+                    .build()
+            )
         }
     }
 

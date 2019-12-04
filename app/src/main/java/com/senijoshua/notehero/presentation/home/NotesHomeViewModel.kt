@@ -6,8 +6,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.senijoshua.notehero.data.repository.NotesRepository
 import com.senijoshua.notehero.data.sources.local.entity.Note
-import kotlinx.coroutines.launch
 import javax.inject.Inject
+import kotlinx.coroutines.launch
 
 /**
  * This class stores and manages data related to the Notes Home fragment i.e. list of all visible notes
@@ -15,7 +15,8 @@ import javax.inject.Inject
  * the View is subscribed to its LiveData observable in order to react to changes in the held data when in an active state
  *@author Seni Joshua
  */
-class NotesHomeViewModel @Inject constructor(private val notesRepository: NotesRepository) : ViewModel() {
+class NotesHomeViewModel @Inject constructor(private val notesRepository: NotesRepository) :
+    ViewModel() {
 
     private val mutableNotes: MutableLiveData<List<Note>> by lazy {
         MutableLiveData<List<Note>>().also {

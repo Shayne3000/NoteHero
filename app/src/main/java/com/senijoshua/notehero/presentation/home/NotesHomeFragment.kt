@@ -12,7 +12,8 @@ import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
 class NotesHomeFragment : NoteHeroFragment(R.layout.fragment_notes_home) {
-    @Inject lateinit var viewModel: NotesHomeViewModel
+    @Inject
+    lateinit var viewModel: NotesHomeViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidSupportInjection.inject(this)
