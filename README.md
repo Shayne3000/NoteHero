@@ -12,7 +12,7 @@ The app has three screens, namely:  and it provides the following functionalitie
 
 ### Components/Techniques/Methodologies demonstrated
 
-It demonstrates the use of modern Android app development techniques/frameworks such as the MVVM + LiveData from Android architecture components.
+It demonstrates the use of modern Android app development techniques/frameworks such as the MVVM + LiveData from Android architecture components within a Single-Activity model.
 It highlights standard android programming frameworks and how they should be used such as the new Architecture components and the Material components. 
 It also talks about creating user-interfaces that does not hamper performance. It also uses proguard for code shrinking and obfuscation.
 
@@ -27,6 +27,7 @@ The app is composed of unit and UI tests...
 ### Libraries 
 
 * [Dagger2](https://google.github.io/dagger/) for dependency injection
+* [Kotlin Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html) for asynchronous programming.
 * See [This](https://github.com/googlesamples/android-architecture-components/tree/master/GithubBrowserSample) for further inspiration.
 
 ## License 
