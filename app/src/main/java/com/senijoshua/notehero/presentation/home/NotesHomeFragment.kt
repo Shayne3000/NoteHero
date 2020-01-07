@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.senijoshua.notehero.R
 import com.senijoshua.notehero.data.sources.local.entity.Note
 import com.senijoshua.notehero.presentation.base.NoteHeroFragment
@@ -28,6 +29,8 @@ class NotesHomeFragment : NoteHeroFragment(R.layout.fragment_notes_home) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val navController = findNavController()
+        navController.navigate(R.id.note_details_fragment)
         // callback for after the layout has been inflated
         // perform setup of UI elements e.g Toolbar and button here after the layout has been inflated.
     }
